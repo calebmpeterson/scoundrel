@@ -1,0 +1,8 @@
+.layout {
+  margin: 0;
+  padding: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

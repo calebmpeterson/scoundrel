@@ -1,0 +1,88 @@
+.card {
+  --width: 52px;
+  --height: 80px;
+
+  position: relative;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  user-select: none;
+
+  &[data-size="small"] {
+    width: var(--width);
+    height: var(--height);
+  }
+
+  &[data-size="large"] {
+    width: calc(var(--width) * 2);
+    height: calc(var(--height) * 2);
+  }
+
+  &[data-suite="hearts"],
+  &[data-suite="diamonds"] {
+    color: red;
+  }
+
+  &[data-suite="clubs"],
+  &[data-suite="spades"] {
+    color: black;
+  }
+
+  &[role="button"] {
+    cursor: pointer;
+    transition: box-shadow 333ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.suite {
+  position: absolute;
+  font-size: 12px;
+
+  &[data-location="top-left"] {
+    top: 0;
+    left: 4px;
+  }
+
+  &[data-location="bottom-right"] {
+    bottom: 0;
+    right: 4px;
+    transform: rotate(180deg);
+  }
+
+  &[data-size="small"] {
+    font-size: 12px;
+  }
+
+  &[data-size="large"] {
+    font-size: 18px;
+  }
+}
+
+.face {
+  text-transform: uppercase;
+
+  &[data-size="small"] {
+    font-size: 14px;
+    transform: rotate(-90deg);
+  }
+
+  &[data-size="large"] {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.role {
+  font-size: 36px;
+}
