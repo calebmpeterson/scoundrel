@@ -19,6 +19,7 @@ const ROLE_DISPLAY = {
 interface Props extends Card {
   size?: "small" | "large";
   isInteractive?: boolean;
+  onInteract?: (card: Card) => void;
 }
 
 export const CardDisplay: FC<Props> = ({
@@ -26,13 +27,19 @@ export const CardDisplay: FC<Props> = ({
   face,
   size = "small",
   isInteractive,
+  onInteract,
 }) => {
+  const onClick = () => {
+    onInteract?.({ suite, face });
+  };
+
   return (
     <div
       className={styles.card}
       data-suite={suite}
       data-size={size}
       role={isInteractive ? "button" : "none"}
+      onClick={onClick}
     >
       <div className={styles.suite} data-location="top-left" data-size={size}>
         {SUITE_DISPLAY[suite]}

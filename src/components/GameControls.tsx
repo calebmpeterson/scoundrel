@@ -8,6 +8,8 @@ import {
 import styles from "./GameControls.module.css";
 import { HealthDisplay } from "./HealthDisplay";
 import { ScoreDisplay } from "./ScoreDisplay";
+import { StatusDisplay } from "./StatusDisplay";
+import { WeaponDisplay } from "./WeaponDisplay";
 
 export const GameControls = () => {
   const canDealRoom = useAtomValue(canDealRoomAtom);
@@ -18,7 +20,10 @@ export const GameControls = () => {
 
   return (
     <div className={styles.controls}>
-      <HealthDisplay />
+      <div>
+        <HealthDisplay />
+        <WeaponDisplay />
+      </div>
 
       <div className={styles.actions}>
         <button onClick={onDealRoom} disabled={!canDealRoom}>
@@ -30,7 +35,10 @@ export const GameControls = () => {
         </button>
       </div>
 
-      <ScoreDisplay />
+      <div>
+        <StatusDisplay />
+        <ScoreDisplay />
+      </div>
     </div>
   );
 };
