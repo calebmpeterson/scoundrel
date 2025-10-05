@@ -8,3 +8,10 @@
 
   font-size: 18px;
 }
+
+.suites {
+  display: flex;
+  gap: 16px;
+  font-size: 48px;
+  justify-content: center;
+}

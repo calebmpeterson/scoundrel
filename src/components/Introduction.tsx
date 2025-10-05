@@ -19,5 +19,11 @@ export const Introduction: FC = () => (
       The game ends when you die (your health hits zero) or survive through the
       deck. Success depends on smart risk-taking and order of play.
     </div>
+    <div className={styles.suites}>
+      <div style={{ color: "var(--black)" }}>♣</div>
+      <div style={{ color: "var(--red)" }}>♥ </div>
+      <div style={{ color: "var(--black)" }}>♠</div>
+      <div style={{ color: "var(--red)" }}>♦</div>
+    </div>
   </div>
 );

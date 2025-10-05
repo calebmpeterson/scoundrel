@@ -34,12 +34,12 @@
 
   &[data-suite="hearts"],
   &[data-suite="diamonds"] {
-    color: red;
+    color: var(--red);
   }
 
   &[data-suite="clubs"],
   &[data-suite="spades"] {
-    color: black;
+    color: var(--black);
   }
 
   &[role="button"] {

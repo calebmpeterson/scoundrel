@@ -21,7 +21,7 @@ export const GameControls = () => {
 
   const isInDungeon = useAtomValue(isInDungeonAtom);
 
-  const dealRoomLabel = isInDungeon ? "Next Room" : "Enter Dungeon";
+  const dealRoomLabel = isInDungeon ? "Next Room" : "Enter the Dungeon";
 
   return (
     <div className={styles.controls}>
@@ -35,9 +35,11 @@ export const GameControls = () => {
           {dealRoomLabel}
         </button>
 
-        <button onClick={onEscapeRoom} disabled={!canEscapeRoom}>
-          Run
-        </button>
+        {isInDungeon && (
+          <button onClick={onEscapeRoom} disabled={!canEscapeRoom}>
+            Run
+          </button>
+        )}
       </div>
 
       <div>

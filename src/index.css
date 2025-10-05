@@ -18,6 +18,8 @@
   --disabled-fg: #888;
   --transition-duration: 200ms;
   --backdrop-bg: rgba(0, 0, 0, 0.33);
+  --red: red;
+  --black: black;
 }
 
 body {
