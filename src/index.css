@@ -32,10 +32,13 @@ body {
 }
 
 button {
+  box-sizing: border-box;
+
   color: var(--action-fg);
   border: 1px solid var(--action-fg);
   border-radius: 6px;
   background-color: var(--action-bg);
+  white-space: pre;
 
   &:not([disabled]) {
     cursor: pointer;

@@ -13,6 +13,10 @@ export function DungeonDisplay() {
 
   const toggleLabel = isDungeonVisible ? "Hide Dungeon" : "Show Dungeon";
 
+  if (import.meta.env.MODE !== "development") {
+    return <div />;
+  }
+
   return (
     <div className={styles.container}>
       {isDungeonVisible && (
