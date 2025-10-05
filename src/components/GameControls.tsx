@@ -27,11 +27,11 @@ export const GameControls = () => {
 
       <div className={styles.actions}>
         <button onClick={onDealRoom} disabled={!canDealRoom}>
-          Deal Room
+          Next Room
         </button>
 
         <button onClick={onEscapeRoom} disabled={!canEscapeRoom}>
-          Escape Room
+          Run
         </button>
       </div>
 

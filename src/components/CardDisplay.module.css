@@ -1,6 +1,6 @@
 .card {
-  --width: 52px;
-  --height: 80px;
+  --width: 64px;
+  --height: 96px;
 
   position: relative;
   border: 1px solid black;
@@ -23,6 +23,13 @@
   &[data-size="large"] {
     width: calc(var(--width) * 2);
     height: calc(var(--height) * 2);
+    border-radius: 8px;
+  }
+
+  &[data-size="x-large"] {
+    width: calc(var(--width) * 4);
+    height: calc(var(--height) * 4);
+    border-radius: 12px;
   }
 
   &[data-suite="hearts"],
@@ -37,10 +44,12 @@
 
   &[role="button"] {
     cursor: pointer;
-    transition: box-shadow 333ms ease-in-out;
+    transition: box-shadow var(--transition-duration) ease-in-out,
+      transform var(--transition-duration) ease-in-out;
 
     &:hover {
       box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+      transform: translate(0, -8px);
     }
   }
 }
@@ -67,6 +76,10 @@
   &[data-size="large"] {
     font-size: 18px;
   }
+
+  &[data-size="x-large"] {
+    font-size: 24px;
+  }
 }
 
 .face {
@@ -79,6 +92,11 @@
 
   &[data-size="large"] {
     font-size: 24px;
+    font-weight: 700;
+  }
+
+  &[data-size="x-large"] {
+    font-size: 34px;
     font-weight: 700;
   }
 }

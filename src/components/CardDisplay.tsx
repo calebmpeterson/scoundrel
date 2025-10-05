@@ -17,7 +17,7 @@ const ROLE_DISPLAY = {
 };
 
 interface Props extends Card {
-  size?: "small" | "large";
+  size?: "small" | "large" | "x-large";
   isInteractive?: boolean;
   onInteract?: (card: Card) => void;
 }
@@ -45,7 +45,7 @@ export const CardDisplay: FC<Props> = ({
         {SUITE_DISPLAY[suite]}
       </div>
 
-      {size === "large" && (
+      {["large", "x-large"].includes(size) && (
         <div className={styles.role} data-size={size}>
           {ROLE_DISPLAY[suite]}
         </div>

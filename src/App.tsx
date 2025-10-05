@@ -1,6 +1,7 @@
 import styles from "./App.module.css";
 import { DungeonDisplay } from "./components/DungeonDisplay";
 import { GameControls } from "./components/GameControls";
+import { PlayCardOptions } from "./components/PlayCardOptions";
 import { RoomDisplay } from "./components/RoomDisplay";
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
       <DungeonDisplay />
 
       <RoomDisplay />
+
+      <PlayCardOptions />
 
       <GameControls />
     </div>

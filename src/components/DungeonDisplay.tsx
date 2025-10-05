@@ -1,16 +1,28 @@
-import { useAtomValue } from "jotai";
-import { deckAtom } from "../state";
+import { useAtom, useAtomValue } from "jotai";
+import { deckAtom, isDungeonVisibleAtom } from "../state";
 import { CardDisplay } from "./CardDisplay";
 import styles from "./DungeonDisplay.module.css";
 
 export function DungeonDisplay() {
   const deck = useAtomValue(deckAtom);
+  const [isDungeonVisible, setIsDungeonVisible] = useAtom(isDungeonVisibleAtom);
+
+  const onToggleDungeonVisibility = () => {
+    setIsDungeonVisible((isVisible) => !isVisible);
+  };
+
+  const toggleLabel = isDungeonVisible ? "Hide Dungeon" : "Show Dungeon";
 
   return (
-    <div className={styles.layout}>
-      {deck.map((card) => (
-        <CardDisplay key={`${card.suite}-${card.face}`} {...card} />
-      ))}
+    <div className={styles.container}>
+      {isDungeonVisible && (
+        <div className={styles.layout}>
+          {deck.map((card) => (
+            <CardDisplay key={`${card.suite}-${card.face}`} {...card} />
+          ))}
+        </div>
+      )}
+      <button onClick={onToggleDungeonVisibility}>{toggleLabel}</button>
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.33);
+
+  backdrop-filter: blur(4px); /* blur content behind */
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  z-index: 1000;
+
+  button {
+    width: 100%;
+    padding: 16px 32px;
+    color: var(--action-fg);
+    font-size: 18px;
+
+    transition: box-shadow 333ms ease-in-out;
+
+    &:hover:not([disabled]) {
+      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
