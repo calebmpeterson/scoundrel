@@ -8,8 +8,6 @@ import {
 } from "../state";
 import styles from "./GameControls.module.css";
 import { HealthDisplay } from "./HealthDisplay";
-import { ScoreDisplay } from "./ScoreDisplay";
-import { StatusDisplay } from "./StatusDisplay";
 import { WeaponDisplay } from "./WeaponDisplay";
 
 export const GameControls = () => {
@@ -25,27 +23,28 @@ export const GameControls = () => {
 
   return (
     <div className={styles.controls}>
-      <div>
+      <div className={styles.status}>
         <HealthDisplay />
         <WeaponDisplay />
       </div>
 
-      <div className={styles.actions}>
-        <button onClick={onDealRoom} disabled={!canDealRoom}>
-          {dealRoomLabel}
-        </button>
+      {isInDungeon ? (
+        <div className={styles.actions}>
+          <button onClick={onDealRoom} disabled={!canDealRoom}>
+            {dealRoomLabel}
+          </button>
 
-        {isInDungeon && (
           <button onClick={onEscapeRoom} disabled={!canEscapeRoom}>
             Run
           </button>
-        )}
-      </div>
-
-      <div>
-        <StatusDisplay />
-        <ScoreDisplay />
-      </div>
+        </div>
+      ) : (
+        <div>
+          <button onClick={onDealRoom} disabled={!canDealRoom}>
+            {dealRoomLabel}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

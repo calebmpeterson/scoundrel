@@ -21,6 +21,8 @@
     color: var(--action-fg);
     font-size: 18px;
 
+    border-radius: 12px;
+
     transition: box-shadow 333ms ease-in-out;
 
     &:hover:not([disabled]) {

@@ -38,12 +38,12 @@ export const PlayCardOptions: FC = () => {
         {isMonsterCard(chosen) && (
           <>
             <button onClick={() => onPlayCard(chosen, { attack: "unarmed" })}>
-              Attack unarmed
+              Attack Unarmed
             </button>
 
             {isWeaponEquipped && (
               <button onClick={() => onPlayCard(chosen, { attack: "armed" })}>
-                Attack with weapon
+                Attack with Weapon
               </button>
             )}
           </>

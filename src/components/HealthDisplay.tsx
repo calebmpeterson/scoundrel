@@ -5,5 +5,5 @@ import styles from "./HealthDisplay.module.css";
 
 export const HealthDisplay: FC = () => {
   const health = useAtomValue(healthAtom);
-  return <div className={styles.health}>Health: {health}</div>;
+  return <div className={styles.health}>Health {health}</div>;
 };

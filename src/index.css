@@ -41,6 +41,7 @@ button {
   border-radius: 6px;
   background-color: var(--action-bg);
   white-space: pre;
+  font-weight: 600;
 
   &:not([disabled]) {
     cursor: pointer;

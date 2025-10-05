@@ -5,5 +5,5 @@ import styles from "./ScoreDisplay.module.css";
 
 export const WeaponDisplay: FC = () => {
   const damage = useAtomValue(weaponDamageAtom);
-  return <div className={styles.damage}>Weapon: {damage}</div>;
+  return <div className={styles.damage}>Attack {damage}</div>;
 };
