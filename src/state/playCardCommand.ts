@@ -5,6 +5,7 @@ import type { Card } from "../types";
 import { isHealthCard } from "../utils/isHealthCard";
 import { isMonsterCard } from "../utils/isMonsterCard";
 import { isWeaponCard } from "../utils/isWeaponCard";
+import { canHealAtom, didJustHealAtom } from "./canHeal";
 import { chosenCardAtom } from "./chosenCard";
 import { healthAtom } from "./health";
 import { roomAtom } from "./room";
@@ -18,9 +19,15 @@ export const playCardCommand = atom(
     const health = get(healthAtom);
 
     if (isHealthCard(played)) {
-      // TODO: prevent player from using two health potions in a single room
-      console.log("Heal", played, { health });
-      set(healthAtom, Math.min(20, health + FACE_VALUE_LOOKUP[played.face]));
+      const canHeal = get(canHealAtom);
+
+      console.log("Heal", played, { health, canHeal });
+
+      // The play can only play one healing card per room
+      if (canHeal) {
+        set(healthAtom, Math.min(20, health + FACE_VALUE_LOOKUP[played.face]));
+        set(didJustHealAtom, true);
+      }
     }
 
     if (isWeaponCard(played)) {

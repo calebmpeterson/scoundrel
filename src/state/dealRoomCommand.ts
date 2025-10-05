@@ -2,6 +2,7 @@ import { atom } from "jotai";
 import { drop, take } from "lodash";
 import { canDealRoomAtom } from "./canDealRoom";
 import { didJustEscapeAtom } from "./canEscapeRoom";
+import { didJustHealAtom } from "./canHeal";
 import { deckAtom } from "./deck";
 import { roomAtom } from "./room";
 
@@ -19,4 +20,5 @@ export const dealRoomCommand = atom(null, (get, set) => {
   set(roomAtom, [...room, ...take(deck, cardsToDeal)]);
   set(deckAtom, drop(deck, cardsToDeal));
   set(didJustEscapeAtom, false);
+  set(didJustHealAtom, false);
 });

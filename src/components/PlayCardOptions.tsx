@@ -1,6 +1,7 @@
 import { useAtomValue, useSetAtom } from "jotai";
 import type { FC } from "react";
 import {
+  canHealAtom,
   chosenCardAtom,
   isWeaponEquippedAtom,
   playCardCommand,
@@ -21,6 +22,9 @@ export const PlayCardOptions: FC = () => {
   };
 
   const isWeaponEquipped = useAtomValue(isWeaponEquippedAtom);
+  const canHeal = useAtomValue(canHealAtom);
+
+  const healLabel = canHeal ? "Heal" : "Discard";
 
   if (!chosen) {
     return null;
@@ -47,7 +51,7 @@ export const PlayCardOptions: FC = () => {
 
         {isHealthCard(chosen) && (
           <>
-            <button onClick={() => onPlayCard(chosen)}>Heal</button>
+            <button onClick={() => onPlayCard(chosen)}>{healLabel}</button>
           </>
         )}
 

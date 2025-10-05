@@ -36,3 +36,17 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.status {
+  font-size: 96px;
+}
+
+.summary {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.score {
+  font-size: 36px;
+  font-weight: 600;
+}

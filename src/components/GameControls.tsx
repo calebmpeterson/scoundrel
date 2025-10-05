@@ -4,6 +4,7 @@ import {
   canEscapeRoomAtom,
   dealRoomCommand,
   escapeRoomCommand,
+  isInDungeonAtom,
 } from "../state";
 import styles from "./GameControls.module.css";
 import { HealthDisplay } from "./HealthDisplay";
@@ -18,6 +19,10 @@ export const GameControls = () => {
   const canEscapeRoom = useAtomValue(canEscapeRoomAtom);
   const onEscapeRoom = useSetAtom(escapeRoomCommand);
 
+  const isInDungeon = useAtomValue(isInDungeonAtom);
+
+  const dealRoomLabel = isInDungeon ? "Next Room" : "Enter Dungeon";
+
   return (
     <div className={styles.controls}>
       <div>
@@ -27,7 +32,7 @@ export const GameControls = () => {
 
       <div className={styles.actions}>
         <button onClick={onDealRoom} disabled={!canDealRoom}>
-          Next Room
+          {dealRoomLabel}
         </button>
 
         <button onClick={onEscapeRoom} disabled={!canEscapeRoom}>

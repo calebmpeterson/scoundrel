@@ -39,7 +39,7 @@ export const CardDisplay: FC<Props> = ({
       data-suite={suite}
       data-size={size}
       role={isInteractive ? "button" : "none"}
-      onClick={onClick}
+      onClick={isInteractive ? onClick : undefined}
     >
       <div className={styles.suite} data-location="top-left" data-size={size}>
         {SUITE_DISPLAY[suite]}

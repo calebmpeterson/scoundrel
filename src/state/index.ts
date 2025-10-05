@@ -1,5 +1,6 @@
 export * from "./canDealRoom";
 export * from "./canEscapeRoom";
+export * from "./canHeal";
 export * from "./canPlayCard";
 export * from "./chooseCardCommand";
 export * from "./chosenCard";
@@ -10,6 +11,7 @@ export * from "./health";
 export * from "./isDungeonComplete";
 export * from "./isDungeonVisible";
 export * from "./isGameOver";
+export * from "./isInDungeon";
 export * from "./isWeaponEquipped";
 export * from "./playCardCommand";
 export * from "./resetGameCommand";
