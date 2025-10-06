@@ -17,7 +17,7 @@
   --disabled-border: #888;
   --disabled-fg: #888;
   --transition-duration: 200ms;
-  --backdrop-bg: rgba(0, 0, 0, 0.33);
+  --backdrop-bg: rgba(0, 0, 0, 0.5);
   --red: red;
   --black: black;
 }
