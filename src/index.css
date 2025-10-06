@@ -5,13 +5,14 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --bg: #000000;
   --action-fg: white;
   --action-bg: #242424;
   --disabled-border: #888;
@@ -43,6 +44,9 @@ button {
   white-space: pre;
   font-weight: 600;
 
+  transition: box-shadow 333ms ease-in-out, outline 333ms ease-in-out;
+  outline: 2px solid transparent;
+
   &:not([disabled]) {
     cursor: pointer;
   }
@@ -59,10 +63,6 @@ button {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-
-    --action-fg: black;
-    --action-bg: white;
+    /* Left empty on purpose */
   }
 }

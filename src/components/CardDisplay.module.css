@@ -3,9 +3,9 @@
   --height: 96px;
 
   position: relative;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
-  background-color: white;
+  background-color: var(--bg);
 
   display: flex;
   flex-direction: column;
@@ -30,26 +30,41 @@
     width: calc(var(--width) * 4);
     height: calc(var(--height) * 4);
     border-radius: 12px;
+
+    &[data-suite="hearts"],
+    &[data-suite="diamonds"] {
+      outline: 12px dashed var(--bg);
+      box-shadow: 0 0 12px 1px var(--red);
+    }
+
+    &[data-suite="clubs"],
+    &[data-suite="spades"] {
+      outline: 12px dashed var(--bg);
+      box-shadow: 0 0 12px 1px var(--black);
+    }
   }
 
   &[data-suite="hearts"],
   &[data-suite="diamonds"] {
     color: var(--red);
+    --border-color: var(--red);
   }
 
   &[data-suite="clubs"],
   &[data-suite="spades"] {
     color: var(--black);
+    --border-color: var(--black);
   }
 
   &[role="button"] {
+    outline: 1px solid var(--bg);
     cursor: pointer;
     transition: box-shadow var(--transition-duration) ease-in-out,
       transform var(--transition-duration) ease-in-out;
 
     &:hover {
-      box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
-      transform: translate(0, -8px);
+      box-shadow: 0 0 4px 1px var(--border-color);
+      transform: scale(1.05);
     }
   }
 }
@@ -57,28 +72,34 @@
 .suite {
   position: absolute;
   font-size: 12px;
+  line-height: 100%;
 
   &[data-location="top-left"] {
     top: 0;
-    left: 4px;
+    left: var(--offset);
+    top: var(--offset);
   }
 
   &[data-location="bottom-right"] {
     bottom: 0;
-    right: 4px;
+    right: var(--offset);
+    bottom: var(--offset);
     transform: rotate(180deg);
   }
 
   &[data-size="small"] {
+    --offset: 4px;
     font-size: 12px;
   }
 
   &[data-size="large"] {
+    --offset: 8px;
     font-size: 18px;
   }
 
   &[data-size="x-large"] {
-    font-size: 24px;
+    --offset: 16px;
+    font-size: 32px;
   }
 }
 
