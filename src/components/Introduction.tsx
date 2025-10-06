@@ -3,7 +3,15 @@ import styles from "./Introduction.module.css";
 
 export const Introduction: FC = () => (
   <div className={styles.container}>
-    <h1 style={{ textAlign: "center" }}>Scoundrel Solitaire</h1>
+    <h1 style={{ textAlign: "center", margin: "0" }}>Scoundrel Solitaire</h1>
+
+    <div className={styles.suites}>
+      <div style={{ color: "var(--black)" }}>♣</div>
+      <div style={{ color: "var(--red)" }}>♥ </div>
+      <div style={{ color: "var(--black)" }}>♠</div>
+      <div style={{ color: "var(--red)" }}>♦</div>
+    </div>
+
     <div>
       Scoundrel is a solo dungeon-crawling card game. Each room is made up of
       four cards representing monsters, weapons, and healing items. You must
@@ -18,12 +26,6 @@ export const Introduction: FC = () => (
     <div>
       The game ends when you die (your health hits zero) or survive through the
       deck. Success depends on smart risk-taking and order of play.
-    </div>
-    <div className={styles.suites}>
-      <div style={{ color: "var(--black)" }}>♣</div>
-      <div style={{ color: "var(--red)" }}>♥ </div>
-      <div style={{ color: "var(--black)" }}>♠</div>
-      <div style={{ color: "var(--red)" }}>♦</div>
     </div>
   </div>
 );

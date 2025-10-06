@@ -23,10 +23,12 @@ export const GameControls = () => {
 
   return (
     <div className={styles.controls}>
-      <div className={styles.status}>
-        <HealthDisplay />
-        <WeaponDisplay />
-      </div>
+      {isInDungeon && (
+        <div className={styles.status}>
+          <HealthDisplay />
+          <WeaponDisplay />
+        </div>
+      )}
 
       {isInDungeon ? (
         <div className={styles.actions}>
