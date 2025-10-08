@@ -33,13 +33,11 @@
 
     &[data-suite="hearts"],
     &[data-suite="diamonds"] {
-      outline: 12px dashed var(--bg);
       box-shadow: 0 0 12px 1px var(--red);
     }
 
     &[data-suite="clubs"],
     &[data-suite="spades"] {
-      outline: 12px dashed var(--bg);
       box-shadow: 0 0 12px 1px var(--black);
     }
   }
@@ -63,7 +61,7 @@
       transform var(--transition-duration) ease-in-out;
 
     &:hover {
-      box-shadow: 0 0 4px 1px var(--border-color);
+      box-shadow: 0 0 1px 2px var(--border-color);
       transform: scale(1.05);
     }
   }
@@ -71,6 +69,7 @@
 
 .suite {
   position: absolute;
+  font-family: system-ui;
   font-size: 12px;
   line-height: 100%;
 

@@ -16,3 +16,9 @@
   font-size: 48px;
   justify-content: center;
 }
+
+.suite {
+  color: var(--color);
+  font-family: system-ui;
+  text-shadow: 0 0 8px var(--color), 0 0 1px var(--bg);
+}
