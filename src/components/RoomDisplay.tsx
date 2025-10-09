@@ -1,7 +1,8 @@
 import { useAtomValue, useSetAtom } from "jotai";
+import { range } from "lodash";
 import type { FC } from "react";
 import { canPlayCardAtom, chooseCardCommand, roomAtom } from "../state";
-import { CardDisplay } from "./CardDisplay";
+import { BlankCard, CardDisplay } from "./CardDisplay";
 import styles from "./RoomDisplay.module.css";
 
 export const RoomDisplay: FC = () => {
@@ -9,6 +10,8 @@ export const RoomDisplay: FC = () => {
 
   const canChooseCard = useAtomValue(canPlayCardAtom);
   const onChooseCard = useSetAtom(chooseCardCommand);
+
+  const blankCardsToShow = 4 - room.length;
 
   return (
     <div className={styles.room}>
@@ -20,6 +23,10 @@ export const RoomDisplay: FC = () => {
           size="large"
           {...card}
         />
+      ))}
+
+      {range(0, blankCardsToShow).map((index) => (
+        <BlankCard key={`blank-${index}`} size="large" />
       ))}
     </div>
   );

@@ -58,6 +58,10 @@
       transform: scale(1.05);
     }
   }
+
+  &[data-blank] {
+    border: 1px dashed var(--disabled-fg);
+  }
 }
 
 .suite {

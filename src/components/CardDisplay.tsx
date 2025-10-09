@@ -65,3 +65,9 @@ export const CardDisplay: FC<Props> = ({
     </div>
   );
 };
+
+type BlankCardProps = Pick<Props, "size">;
+
+export const BlankCard: FC<BlankCardProps> = ({ size = "small" }) => (
+  <div className={styles.card} data-size={size} data-blank />
+);
