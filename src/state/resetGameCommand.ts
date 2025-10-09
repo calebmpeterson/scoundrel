@@ -1,5 +1,6 @@
 import { atom } from "jotai";
 import { shuffle } from "lodash";
+import { MAX_HEALTH } from "../constants";
 import { createDeck } from "../utils/createDeck";
 import { pruneDeck } from "../utils/pruneDeck";
 import { didJustEscapeAtom } from "./canEscapeRoom";
@@ -27,7 +28,7 @@ export const resetGameCommand = atom(null, (_get, set) => {
   set(roomAtom, []);
 
   // Reset the health
-  set(healthAtom, 20);
+  set(healthAtom, MAX_HEALTH);
 
   // No weapon equipped
   set(weaponAtom, null);

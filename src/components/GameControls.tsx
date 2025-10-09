@@ -8,6 +8,7 @@ import {
 } from "../state";
 import styles from "./GameControls.module.css";
 import { HealthDisplay } from "./HealthDisplay";
+import { ProgressDisplay } from "./ProgressDisplay";
 import { WeaponDisplay } from "./WeaponDisplay";
 
 export const GameControls = () => {
@@ -24,10 +25,13 @@ export const GameControls = () => {
   return (
     <div className={styles.controls}>
       {isInDungeon && (
-        <div className={styles.status}>
+        <>
           <HealthDisplay />
-          <WeaponDisplay />
-        </div>
+          <div className={styles.status}>
+            <WeaponDisplay />
+            <ProgressDisplay />
+          </div>
+        </>
       )}
 
       {isInDungeon ? (

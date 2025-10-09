@@ -15,3 +15,5 @@ export const FACE_VALUE_LOOKUP: Record<Face, number> = {
   king: 13,
   ace: 14,
 };
+
+export const MAX_HEALTH = 20;

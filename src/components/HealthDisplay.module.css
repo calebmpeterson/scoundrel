@@ -1,3 +1,15 @@
+.container {
+  font-family: system-ui;
+}
+
 .health {
   display: inline;
+  color: var(--red);
+  text-shadow: 0 0 1px var(--red);
+}
+
+.depleted {
+  display: inline;
+  color: var(--bg);
+  text-shadow: 0 0 1px var(--red);
 }
