@@ -18,7 +18,7 @@
   --action-bg: #18181b;
   --disabled-border: #888;
   --disabled-fg: #888;
-  --transition-duration: 200ms;
+  --transition-duration: 333ms;
   --backdrop-bg: rgba(0, 0, 0, 0.5);
   --red: #f43f5e;
   --black: #e4e4e7;
@@ -64,7 +64,9 @@ button {
   font-weight: 400;
   font-style: normal;
 
-  transition: box-shadow 333ms ease-in-out, outline 333ms ease-in-out;
+  transition: outline var(--transition-duration) ease-in-out,
+    transform var(--transition-duration) ease-in-out;
+
   outline: 2px solid transparent;
 
   &:not([disabled]) {
@@ -78,6 +80,14 @@ button {
   &[disabled] {
     border: 1px solid var(--disabled-border);
     color: var(--disabled-fg);
+  }
+
+  &:not([disabled]) {
+    &:hover {
+      outline: 1px solid var(--action-fg);
+      outline-offset: 1px;
+      transform: scale(1.05);
+    }
   }
 }
 

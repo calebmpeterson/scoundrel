@@ -1,3 +1,16 @@
+.container {
+  font-size: 18px;
+}
+
 .damage {
   display: inline;
+  font-family: system-ui;
+  text-shadow: 0 0 1px var(--fg);
+}
+
+.empty {
+  display: inline;
+  font-family: system-ui;
+  color: var(--bg);
+  text-shadow: 0 0 1px var(--fg);
 }

@@ -25,13 +25,13 @@ export const GameControls = () => {
   return (
     <div className={styles.controls}>
       {isInDungeon && (
-        <>
+        <div>
           <HealthDisplay />
           <div className={styles.status}>
             <WeaponDisplay />
             <ProgressDisplay />
           </div>
-        </>
+        </div>
       )}
 
       {isInDungeon ? (
