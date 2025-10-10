@@ -6,7 +6,7 @@ const COLOR = "--color";
 export const Introduction: FC = () => (
   <div className={styles.container}>
     <div style={{ textAlign: "center", fontWeight: 600 }}>
-      A solo rogue-like card game
+      A solo dungeon crawling card game
     </div>
     <h1 style={{ textAlign: "center", margin: "0" }}>Scoundrel Solitaire</h1>
 
